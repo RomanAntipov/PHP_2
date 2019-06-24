@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&#9776; Каталог</title>
+    <script src="script.js" defer></script>
+
+    <style>
+        table {
+             border-spacing: 0;
+        }
+        td {
+            border: 0.5px solid white;
+            text-align: center;
+        }
+        #bigView {
+            text-align: center;
+            margin: 20px 50px;
+        }
+        .preViewCl {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-self: flex-start;
+            width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <div id="bigView">  
+        <img src="big/1.jpg" width="750px"/>
+    </div>
+    <div id="preView" class="preViewCl">
+        <img src="small/1.jpg" height="100px" id="sm_1"/>
+        <img src="small/2.jpg" height="100px" id="sm_2"/>
+        <img src="small/3.jpg" height="100px" id="sm_3"/>
+        <img src="small/4.jpg" height="100px" id="sm_4"/>
+    </div>
+</div>
+
+</body>
+</html>
