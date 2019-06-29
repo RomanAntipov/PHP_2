@@ -1,33 +1,17 @@
 <?php
-    include 'engine/logeng.php';
+    $today = date('d-m-Y');
+    session_start();
+    // var_dump($today);
 
-?>
+    // var_dump($_SESSION);
+    if ($_SESSION["auth"] == true)
+        $content = 'view/v_contWelc.php';
+    else $content = 'view/v_contForm.php';
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>&#9776; Login</title>
-    <!-- <script src="script.js" defer></script> -->
+    if (isset($_POST['login'], $_POST['password'])) {
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        include 'model/m_logeng.php';
+    };
 
-
-</head>
-
-<body>
-
-<div>
-	<form method="post">
-        <fieldset><legend width="200px">Вход</legend>
-            <div>
-                <div>Логин:</div>
-                <div><input type="text" name="login" placeholder="login"></div>
-                <div>Пароль:</div>
-                <div><input type="text" name="password" placeholder="password"></div>
-                <button type="submit">Войти</button>
-                </div>
-            </div>
-        </fieldset>
-    </form>
-</div>
-</body>
-</html>
+    include 'view/v_login.php';
